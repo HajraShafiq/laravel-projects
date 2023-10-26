@@ -1,0 +1,355 @@
+
+//Color Variable
+$clr_white: #fff;
+$clr_offwhite: rgba(255,255,255,0.8);
+$clr_black: #000;
+$clr_cod: #222;
+$clr_coral_red: #ff2d2d;
+$clr_coral: #FF805E;
+$clr_aztech: #0E1C1F;
+$clr_dove_grey: #656565;
+/*---------------------------------
+    Color Switcher Button CSS 
+-----------------------------------*/
+.switch-theme-mode{
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    z-index: 999999;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    &.round {
+        border-radius: 34px;
+        &:before{
+            border-radius: 50%;
+        }
+    }
+    &:before {
+        position: absolute;
+        content: "";
+        height: 40px;
+        width: 40px;
+        left: 0px;
+        bottom: 4px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        box-shadow: 0 0px 15px #2020203d;
+        background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+input:checked + .slider {
+  background-color: $clr_black;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px  $clr_black;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*---------------------------------
+    Color CSS For Elements 
+-----------------------------------*/
+.theme-light {
+    .logo{
+        .logo-dark{
+            display: none;
+        }
+        .logo-light{
+            display: block;
+        }
+    }
+}
+.theme-dark {
+    body,
+    .bg-white{
+        background-color: $clr_black!important;
+    }
+    h1,h2,h3,h4,h5,h6{
+        color: $clr_white;
+        a{
+            color: $clr_offwhite;
+            &:hover{
+                color: $clr_coral;
+            }
+        }
+    }
+    .back-to-top{
+        color: $clr_white;
+    }
+    .dpt-100 {
+        padding-top: 100px;
+    }
+    p,span{
+        color: $clr_offwhite;
+    }
+    .logo{
+        .logo-dark{
+            display: block;
+        }
+        .logo-light{
+            display: none;
+        }
+    }
+    .td-aztech{
+        background-color: $clr_aztech;
+    }
+    .td-black{
+        background-color: $clr_black;
+    }
+    .bg-aztech{
+        background-color: $clr_black;
+    }
+    .bg-selago{
+        background-color: $clr_aztech;
+    }
+    .section-title,
+    .content-title{
+        h2{
+            color: $clr_white;
+        }
+        p{
+            color: $clr_offwhite;
+        }
+    }
+    .mobile-top-bar span,
+    .blog-metainfo li::after{
+        background-color: $clr_white;
+    }
+    .header-wrap.sticky,
+    .header-wrap.style3 .header-bottom,
+    .header-wrap .header-bottom .container .header-bottom-wrap,
+    .blog-wrap.style1::after,
+    .or-text p,
+    .blog-card.style4 .blog-info {
+        background-color: $clr_black;
+    }
+    .hero-wrap.style1 .hero-img-wrap .hero-chart-box-1,
+    .hero-wrap.style1 .hero-img-wrap .hero-chart-box-2,
+    .member-card .member-info,
+    .hero-wrap.style1 .hero-img-wrap .hero-client-box{
+        background-color: $clr_cod;
+    }
+    .bg-vulcan,
+    .bg-catskill-white,
+    .header-wrap .search-area,
+    .service-wrap.style1::after,
+    .main-menu-wrap #menu ul li.has-children .sub-menu,
+    .service-card .service-info,
+    .why-choose-content .wh-item-wrap .wh-item,
+    .why-choose-wrap.style2 .wh-content .wh-item-wrap .wh-item,
+    .testimonial-item,
+    .hero-wrap.style2 .overlay.bg-vulcan,
+    .feature-wrap.style2 .feature-card-wrap .feature-card,
+    .portfolio-tablist .nav-item .nav-link,
+    .footer-wrap.style2.bg-f .overlay.bg-vulcan,
+    .contact-box,
+    .sidebar .sidebar-widget,
+    .wp-block-quote,
+    .accordion-item .accordion-header .accordion-button,
+    .accordion-item .accordion-body,
+    .pricing-table,
+    .blog-card .blog-info{
+        background-color: $clr_aztech;
+    }
+    .header-wrap .header-top .header-top-left .contact-item p,
+    .header-wrap .header-top .header-top-left .contact-item a,
+    .header-wrap .header-top .header-top-right .social-profile li a i,
+    .main-menu-wrap #menu ul li.has-children .sub-menu li a,
+    .main-menu-wrap #menu > ul > li > a,
+    .header-wrap .searchbtn i,
+    .header-wrap .search-area button i,
+    .portfolio-tablist .nav-item .nav-link,
+    .progressbar-wrap .progress-bar .progress-title-holder .progress-title,
+    .progressbar-wrap .progress-bar .progress-title-holder .progress-number-wrapper .progress-number-mark .percent,
+    .header-wrap .navbar-language .dropdown-toggle::before,
+    .category-box ul li a,
+    .category-box ul li a i,
+    .pp-post-item .pp-post-info h6 a,
+    .post-tag li a,
+    .accordion-item .accordion-header .accordion-button,
+    .login-form .login-header h2,
+    .portfolio-info-widget .portfolio-info-item-wrap .portfolio-info-item span,
+    .sidebar .sidebar-widget h4 {
+        color: $clr_white;
+    }
+    .main-menu-wrap #menu > ul > li > a.active,
+    .main-menu-wrap #menu > ul > li > a:hover,
+    .main-menu-wrap #menu ul li.has-children .sub-menu li a.active,
+    .main-menu-wrap #menu ul li.has-children .sub-menu li a:hover,
+    .header-wrap .header-top .header-top-right .social-profile li a i:hover,
+    .category-box ul li a:hover,
+    .category-box ul li a:hover span,
+    .post-navigation .prev-post:hover,
+    .post-navigation .next-post:hover,
+    .pp-post-item .pp-post-info h6:hover a,
+    .author-info-wrap .author-info .post-metainfo li:hover a,
+    .post-tag li a:hover,
+    .login-form .link:hover,
+    .category-box ul li a:hover i{
+        color: $clr_coral;
+    }
+    .blog-metainfo li,
+    .blog-metainfo li a,
+    .contact-box .contact-info a,
+    .contact-box .contact-info p,
+    .pp-post-item .pp-post-info span,
+    .tag-list ul li a,
+    .content-feature-list li,
+    .post-navigation .prev-post,
+    .post-navigation .next-post,
+    .author-info-wrap .author-info .post-metainfo li a,
+    .author-info-wrap .author-info .post-metainfo li,
+    .reply-btn,
+    #cmt-form .checkbox label,
+    .pricing-table .pricing-features li,
+    .login-form .login-body .form-group label,
+    .login-form .login-body .form_group label,
+    .login-form .link,
+    .portfolio-info-widget .portfolio-info-item-wrap .portfolio-info-item,
+    .blog-metainfo li p{
+        color: $clr_offwhite;
+    }
+    .footer-wrap.style1{
+        border-top:1px solid rgba(255,255,255,0.15);    
+    }
+    .feature-card-wrap,
+    .tag-list ul li a{
+        border: 1px solid rgba(255,255,255,0.18);
+    }
+     article,
+    .pricing-table .pricing-features li,
+    .portfolio-info-widget .portfolio-info-item-wrap .portfolio-info-item,
+    .feature-card-wrap .feature-card{
+        border-color: rgba(255,255,255,0.18);
+    }
+    .header-wrap .search-area,
+    .main-menu-wrap #menu ul li.has-children .sub-menu{
+        border: 1px solid rgba(255,255,255,0.1);
+        border-top: none;
+    }
+    .hero-wrap.style1 .wave-shape-1,
+    .service-wrap.style1 .wave-shape-3,
+    .blog-wrap.style1 .blog-wave {
+        filter: brightness(0) invert(0);
+    }
+    .partner-item img {
+        filter: brightness(3.5) invert(0.31);
+    }
+    .header-wrap .search-area input,
+    #contactForm .form-group input,
+    .search-box .form-group input,
+    #contactForm .form-group textarea,
+    .comment-form .form-group input,
+    .comment-form .form-group textarea,
+    .login-form .login-body .form-group input,
+    .post-author,
+    .comment-item,
+    #cmt-form,
+    .post-meta-option{
+        background-color: transparent;
+        border: 1px solid rgba(255,255,255,0.18);
+        color: $clr_white;
+    }
+    .about-wrap.style2 .about-content-wrap::after,
+    .why-choose-wrap.style2,
+    .why-choose-wrap.style3,
+    .Login-wrap.bg-f,
+    .blog-wrap.style2 {
+        background-blend-mode: difference;
+    }
+    .transparent-text {
+        background-color:$clr_aztech;
+        color: $clr_white;
+        mix-blend-mode: hard-light;
+    }
+    .about-wrap.style2 .about-content-wrap::after{
+        filter: brightness(0.9) invert(1);
+    }
+    .login-form{
+        background-color: $clr_black;
+    }
+    #contactForm{
+        background-color: transparent;
+        border: 1px solid rgba(255,255,255,0.15);
+    }
+    .page-navigation .page-nav li a{
+        border-color: rgba(255,255,255,0.35);
+        color: $clr_white;
+    }
+    .accordion-item .accordion-body{
+        padding: 20px 20px 20px 75px;
+    }
+    .accordion-item .accordion-header .accordion-button span{
+        border-right: 1px solid rgba(255,255,255,0.15);
+    }
+}
+@media only screen  and (max-width:767px) {
+    .theme-dark{
+        .dpt-100{
+            padding-top: 50px;
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .theme-dark{
+        .dpt-100{
+            padding-top: 70px;
+        }
+    }
+}
+@media only screen and (max-width:1199px) {
+    .theme-dark{
+        .header-wrap .header-top{
+            background-color: $clr_cod;
+        }
+        .main-menu-wrap{
+            background-color: $clr_aztech;
+        }
+        .main-menu li > span.menu-expand i,
+        .close-header-top button i,
+        .menu-close i{
+            color: $clr_white;
+        }
+        .main-menu-wrap #menu ul li.has-children .sub-menu{
+            border: none;
+        }
+        .main-menu li a,
+        .main-menu li a.active,
+        .header-wrap .header-bottom .main-menu-wrap #menu > ul > li > a.active,
+        .header-wrap .header-bottom .main-menu-wrap #menu > ul > li > a:hover,
+        .header-wrap .header-bottom .main-menu-wrap #menu > ul > li > a{
+            border-color: rgba(255,255,255,0.1);
+        }
+    }
+}
